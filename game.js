@@ -118,6 +118,180 @@ const EDEFS = [
 // Applied to player or enemy: { type, duration, power }
 // Resolved at start of affected entity's turn
 
+/* ══════════════════════════════════════════════════════════════════════════════
+   LORE — Kael is a mediocre wizard who turned his basement into a dungeon
+   for passive income. You're looking for a bathroom. Monsters think
+   you're a tax inspector. Nobody is having a good time.
+══════════════════════════════════════════════════════════════════════════════ */
+const LORE = {
+  intro:[
+    '         IN THE YEAR OF OUR LORD',
+    '      FOURTEEN-SOMETHING-OR-OTHER...',
+    '',
+    '  KAEL was a wizard of middling talent.',
+    '  His spells mostly fizzled.',
+    '  His tower application was rejected FOUR TIMES.',
+    '',
+    '  So instead, he dug a hole.',
+    '',
+    '  "I will rent it to monsters," he said.',
+    '  "Passive income," he said.',
+    '  "Totally fine," he said.',
+    '',
+    '  YOU wandered in looking for a bathroom.',
+    '',
+    '  The monsters think you are a tax inspector.',
+    '  They are NOT happy about it.',
+    '',
+    '            [ TAP / ANY KEY ]',
+  ],
+  floors:[
+    ['  FLOOR 1: THE BASEMENT','','  Smells like mildew and poor choices.','  A sign reads: NO PARTIES. NO FIRE.','  Below it, smaller: "No tax inspectors.','  I mean it, Gerald."','','  You are not Gerald. This does not help.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 2: THE FORGOTTEN HALLS','','  A notice board:','  "MONSTER UNION MEETING — TUES 7PM','   Agenda: Wages, Benefits, Adventurers","  Refreshments provided (BYOB)"','','  The rats are unionised. Wonderful.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 3: THE BLOODSTONE CAVES','','  A skeleton waves at you cheerfully.','  Then attacks. Then apologises mid-attack.','  "Sorry! Contractual obligation!"','','  You appreciate the honesty.','  Less so the sword.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 4: THE FROZEN DEPTHS','','  KAEL added an "Ice Wing" to attract','  Premium Tenant Wraiths.','  They left a 2-star review.','  ("Draughty. Would haunt again.")','','  A wraith drifts past reading yesterday\'s news.','  They\'re dead. Time is irrelevant.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 5: THE INFERNAL PITS','','  KAEL\'s premium tier. Demons pay extra','  for the mood lighting and lava views.','','  A certificate on the wall:','  "5-STAR FIEND APPROVED"','  "Best Structural Integrity: 3rd Year"','','  You are definitely going to die here.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 6: THE DROWNED VAULTS','','  A water feature. KAEL is proud of it.','  It was supposed to be a library.','  The books are destroyed.','  The spiders love it though.','','  It is, genuinely, kind of pretty.','  You are still going to die.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 7: THE OSSUARY','','  Where KAEL stores failed experiments.','  There are a LOT of experiments.','','  A jar labelled "STEVE" watches you pass.','  You don\'t look back.','  Steve watches.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 8: THE PHILOSOPHER\'S STAIRWELL','','  A Lich sits at a desk, writing.','  "Do NOT disturb me. PhD thesis.','   Chapter 14. Almost done."','','  You disturb it. It is very displeased.','  Academically AND violently.','','  [ TAP / ANY KEY ]'],
+    ['  FLOOR 9: THE WAILING CHAMBERS','','  The walls whisper KAEL\'s regrets:','  "Should have taken the tower mortgage."','  "Should have replied to Gerald."','','  Somewhere above, KAEL watches on a crystal','  ball, eating crackers. He looks impressed.','','  [ TAP / ANY KEY ]'],
+    ['  THE FINAL DEPTHS','','  You can hear breathing ahead.','  Not the monster kind.','  The wizard kind. Nervous. Snacky.','','  KAEL himself awaits.','  He has prepared a speech.','  He has also prepared an escape portal.','','  [ TAP / ANY KEY ]'],
+  ],
+  taunts:{
+    'Rat':['Rat waves a tiny sign: "FAIR WAGES NOW"','Rat demands to see your adventurer\'s licence.','This Rat is the shop steward. Good luck.','Filed a grievance about fighting you. Still fights.'],
+    'Spider':['The Spider has been waiting. It has PLANS.','Eight legs in greeting. Eight legs in violence.','It has been redecorating. You are the centrepiece.','Hisses: "Finally. A visitor for my web."'],
+    'Goblin':['OI! You got a permit for that sword?!','You don\'t look like a tax inspector. Fight anyway.','KAEL said we\'d get overtime. We won\'t.','On its phone. Hangs up. "Gotta go. Work stuff."'],
+    'Skeleton':['I am SO sorry about this. It attacks.','Contractual obligation. Nothing personal.','You seem nice. Most people seem nice. Sword raises.','Could you water my plant? Third alcove. Right.'],
+    'Troll':['Eating a rock. Does not look up. Then does.','Is small. Will still hurt small.','Named its club "Coincidence." This seems wrong.','Troll tired of adventurers. Will nap after.'],
+    'Wraith':['You interrupt my HAUNTING. I had ATMOSPHERE going.','Living. Ugh. Attacks with maximum disdain.','400 years dead. Never been this inconvenienced.','FINE. One haunting. Logging it as overtime.'],
+    'Demon':['A mortal? Down HERE? You\'re brave or stupid.','Consults clipboard. Not on list. Attacks anyway.','KAEL charged me extra for lava views. Anger redirected.','Three stars on the dungeon review. THREE.'],
+    'Dragon':['In a basement. "Don\'t ask," it says.','Was promised a MOUNTAIN. Got a basement with a Troll.','Ceilings are LOW, it growls. Then breathes fire.','Got a discount from Kael. Should have known.'],
+    'Lich':['CHAPTER FOURTEEN WAS ALMOST DONE.','Five centuries of unlife. THIS is my morning.','I have a PhD. From a GOOD university. Attacks.','My supervisor will hear about this.'],
+  },
+  merchant:[
+    '"KAEL\'s prices. Not mine. Don\'t look at me."',
+    '"Everything\'s authentic dungeon-sourced. Mostly."',
+    '"I\'m just here for the dental plan."',
+    '"Rats unionised the supply chain. Prices went up."',
+    '"Floor 5 has a lava pool. Very soothing. Don\'t fall in."',
+    '"KAEL asked me to stop selling to adventurers. I said no."',
+    '"Been here 12 years. I forget what sky looks like."',
+    '"The Skeleton on floor 3 is genuinely lovely."',
+    '"Why ARE you here? The bathroom thing seems unlikely."',
+    '"You\'ve lasted longer than most. Not a compliment yet."',
+  ],
+  eulogies:[
+    'Sought a bathroom.\nFound only monsters.\nFound no bathroom.',
+    'The Rats fought harder.\n(They were on overtime. It helps.)',
+    'Slain by a Skeleton\nthat was sorry the whole time.',
+    'The sign said NO ADVENTURERS.\nHindsight is 20/20.',
+    'Got further than Gerald.\nThis is the highest praise available.',
+    'The Merchant lowers prices in your honour.\nJust kidding. Prices stay the same.',
+    'The Wraith wrote a 1-star review:\n"Adventurer interrupted my haunting. 1/5."',
+    'A hero in every way that matters.\nNone of which were useful down here.',
+    'The Troll named its club after you.\nThis is either honour or threat.',
+    'The Lich finished Chapter 14.\nYou contributed nothing. Nor subtracted.\nYou simply ceased.',
+    'KAEL watched from his crystal ball.\nAte crackers. Felt bad. Ate more crackers.',
+    'Died as they lived: confused\nabout why there were so many monsters here.',
+  ],
+  victory:[
+    '  KAEL finishes his speech.',
+    '  You are, somehow, still standing.',
+    '',
+    '  KAEL stares.',
+    '  You stare back.',
+    '',
+    '  "...right," he says.',
+    '',
+    '  He opens his escape portal.',
+    '  Steps through. Closes it behind him.',
+    '',
+    '  The dungeon is quiet.',
+    '  There is still no bathroom.',
+    '',
+    '          ★  YOU WIN  ★',
+    '',
+    '  (Kael got a studio flat in the capital.',
+    '   Two stars on Zillow. He is fine.)',
+    '',
+    '         [ TAP / ANY KEY ]',
+  ],
+};
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DIALOGUE ENGINE — typewriter overlay drawn on the game canvas
+══════════════════════════════════════════════════════════════════════════════ */
+const DLG = (() => {
+  let _active=false, _lines=[], _li=0, _ci=0, _speed=32, _acc=0, _done=false, _cb=null;
+  const taunted=new Set();
+
+  function show(lines, cb, fast=false){
+    _lines=lines; _li=0; _ci=0; _speed=fast?90:32; _acc=0; _done=false; _active=true; _cb=cb||null;
+  }
+  function dismiss(){
+    if(!_active)return;
+    if(!_done){ _li=_lines.length-1; _ci=(_lines[_li]||'').length; _done=true; return; }
+    _active=false;
+    const cb=_cb; _cb=null;
+    if(cb) cb();
+  }
+  function tick(dt){
+    if(!_active||_done)return;
+    _acc+=dt*_speed;
+    let steps=Math.floor(_acc); _acc-=steps;
+    while(steps-->0){
+      if(_li>=_lines.length){_done=true;return;}
+      _ci++;
+      if(_ci>(_lines[_li]||'').length){_li++;_ci=0;if(_li>=_lines.length){_done=true;return;}}
+    }
+  }
+  function draw(ctx,W,H){
+    if(!_active)return;
+    ctx.fillStyle='rgba(0,0,0,.87)'; ctx.fillRect(0,0,W,H);
+    const pw=Math.min(W-24,460), ph=Math.min(H-60,400);
+    const px=(W-pw)/2, py=(H-ph)/2;
+    ctx.fillStyle='#0c0800'; _rr(ctx,px,py,pw,ph,5); ctx.fill();
+    ctx.strokeStyle='#7a5000'; ctx.lineWidth=2; _rr(ctx,px,py,pw,ph,5); ctx.stroke();
+    ctx.strokeStyle='rgba(255,179,0,.07)'; ctx.lineWidth=1; _rr(ctx,px+4,py+4,pw-8,ph-8,3); ctx.stroke();
+
+    const lh=Math.min(21,Math.floor((ph-40)/Math.max(_lines.length,10)));
+    const fs=Math.max(12,Math.round(lh*0.86));
+    ctx.font=`${fs}px VT323,monospace`;
+    ctx.textBaseline='top'; ctx.textAlign='left';
+    const tx=px+18, ty0=py+14;
+
+    for(let i=0;i<_lines.length;i++){
+      const raw=_lines[i]||'';
+      const shown = i<_li?raw : i===_li?raw.slice(0,_ci) : '';
+      if(i>_li&&!shown)break;
+      if(!raw.trim())continue;
+      const isBlink=raw.includes('TAP')||raw.includes('ANY KEY');
+      const isHdr=i===0||raw.includes('★')||raw.startsWith('  FLOOR')||raw.startsWith('  THE FINAL');
+      if(isBlink){
+        ctx.fillStyle=_done?(Math.floor(Date.now()/400)%2?'#ffee44':'#aa8800'):'#554400';
+      } else if(isHdr){ ctx.fillStyle='#ffe066';
+      } else if(i<3){ ctx.fillStyle='#ffcc66';
+      } else { ctx.fillStyle='#bb8833'; }
+      ctx.fillText(shown,tx,ty0+i*lh);
+    }
+    // cursor
+    if(!_done&&_li<_lines.length){
+      if(Math.floor(Date.now()/280)%2){
+        const cx2=tx+ctx.measureText((_lines[_li]||'').slice(0,_ci)).width+1;
+        ctx.fillStyle='#ffcc66'; ctx.fillRect(cx2,ty0+_li*lh+2,5,fs-2);
+      }
+    }
+    ctx.globalAlpha=1;
+  }
+  function _rr(c,x,y,w,h,r){
+    c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.arcTo(x+w,y,x+w,y+r,r);
+    c.lineTo(x+w,y+h-r);c.arcTo(x+w,y+h,x+w-r,y+h,r);
+    c.lineTo(x+r,y+h);c.arcTo(x,y+h,x,y+h-r,r);c.lineTo(x,y+r);c.arcTo(x,y,x+r,y,r);
+    c.closePath();
+  }
+  return { show, dismiss, tick, draw, isActive:()=>_active, taunted };
+})();
+
 /* ── DOM ─────────────────────────────────────────────────────────────────── */
 const $      = id => document.getElementById(id);
 const canvas = $('gameCanvas');
@@ -501,14 +675,16 @@ function castOctant(octant,ox,oy,row,startSlope,endSlope){
 let animId=null;
 function startGame(){
   if(animId){cancelAnimationFrame(animId);animId=null;}
+  DLG.taunted.clear();
   dungeonLayer=null; dungeonDirty=true;
   G=freshState();
   loadFloor(1);
   showScreen('screen-game');
   resizeCanvas();
   updateHUD();
-  msg('You descend into the Crypts of Kael...',COL.stairs);
   animId=requestAnimationFrame(loop);
+  // Show intro after first frame renders
+  requestAnimationFrame(()=>DLG.show(LORE.intro,null,false));
 }
 
 function loadFloor(floorNum){
@@ -530,6 +706,11 @@ function loadFloor(floorNum){
   updateHUD();
   const th=getTheme(floorNum);
   msg(`Floor ${floorNum}: ${th.name}`, th.fg);
+  // Floor lore (skip floor 1 — covered by intro crawl)
+  if(floorNum>1){
+    const idx=Math.min(floorNum-1,LORE.floors.length-1);
+    DLG.show(LORE.floors[idx],null,true);
+  }
 }
 
 function centerCamera(){
@@ -575,6 +756,7 @@ function msg(text,color='#cc9933'){
 const DIR={n:[0,-1],s:[0,1],e:[1,0],w:[-1,0],nw:[-1,-1],ne:[1,-1],sw:[-1,1],se:[1,1]};
 
 document.addEventListener('keydown',e=>{
+  if(DLG.isActive()){DLG.dismiss();e.preventDefault();e.stopPropagation();return;}
   if(G?.phase==='battle'){handleBattleKey(e.key);e.preventDefault();return;}
   if(G?.shopOpen){handleShopKey(e.key);e.preventDefault();return;}
   if(G?.player?.pendingLevelUp){handleLevelUpKey(e.key);e.preventDefault();return;}
@@ -592,8 +774,12 @@ document.querySelectorAll('.dpad-btn').forEach(btn=>{
 });
 
 let swX=0,swY=0;
-canvas.addEventListener('touchstart',e=>{swX=e.touches[0].clientX;swY=e.touches[0].clientY;},{passive:true});
+canvas.addEventListener('touchstart',e=>{
+  if(DLG.isActive()){e.preventDefault();DLG.dismiss();return;}
+  swX=e.touches[0].clientX;swY=e.touches[0].clientY;
+},{passive:false});
 canvas.addEventListener('touchend',e=>{
+  if(DLG.isActive())return; // dismiss handled in touchstart
   if(G?.phase!=='player') return;
   const t=e.changedTouches[0];
   const dx=t.clientX-swX,dy=t.clientY-swY;
@@ -766,7 +952,16 @@ function openChest(x,y){
 function nextFloor(){
   const f=G.player.floor+1;
   msg(`Descending to floor ${f}…`,COL.stairs);
-  saveBest(G.player);loadFloor(f);
+  saveBest(G.player);
+  if(f>10){
+    // Victory — show ending, then loop dungeon deeper
+    DLG.show(LORE.victory,()=>{
+      msg('KAEL is gone. But the dungeon remains...',COL.stairs);
+      loadFloor(f);
+    },false);
+  } else {
+    loadFloor(f);
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -776,7 +971,10 @@ function openShop(){
   G.shopOpen=true;
   G.phase='shop';
   resizeCanvas();
-  renderShopUI();
+  const quip=LORE.merchant[Math.floor(Math.random()*LORE.merchant.length)];
+  DLG.show(['  KAEL\'S DUNGEON EMPORIUM','  ─────────────────────────','',`  ${quip}`,'',' [ TAP / ANY KEY to browse ]'],()=>{
+    renderShopUI();
+  },true);
   msg('You enter the merchant\'s alcove.',COL.shop);
 }
 function closeShop(){
@@ -890,6 +1088,13 @@ function enterBattle(enemy){
   battleLog('Choose your action.',COL.bDim);
   resizeCanvas();
   updateBattleUI();
+  // First encounter taunt
+  const pool=LORE.taunts[enemy.name];
+  if(pool&&!DLG.taunted.has(enemy.name)){
+    DLG.taunted.add(enemy.name);
+    const line=pool[Math.floor(Math.random()*pool.length)];
+    DLG.show(['',`  ${enemy.name.toUpperCase()} ENCOUNTER`,'',`  "${line}"`,'',' [ TAP / ANY KEY ]'],null,true);
+  }
 }
 function exitBattle(won){
   G.battle=null;
@@ -1161,6 +1366,8 @@ function playerDies(){
   G.phase='dead';
   saveBest(G.player);updateTitleBest();
   const p=G.player;
+  const eulogy=LORE.eulogies[Math.floor(Math.random()*LORE.eulogies.length)];
+  // Populate death screen now, show it after eulogy dismissed
   $('dead-msg').textContent=`Slain on floor ${p.floor} — level ${p.level} — ${p.kills} kills.`;
   $('dead-stats').innerHTML=[
     {v:p.floor,l:'FLOOR'},{v:p.kills,l:'KILLS'},
@@ -1169,7 +1376,11 @@ function playerDies(){
   ].map(s=>`<div class="ds-box"><div class="ds-val">${s.v}</div><div class="ds-lbl">${s.l}</div></div>`).join('');
   $('dead-hs').innerHTML=`BEST FLOOR: ${getBestFloor()} &nbsp;|&nbsp; BEST SCORE: ${getBestScore()}`;
   resizeCanvas();
-  setTimeout(()=>showScreen('screen-dead'),900);
+  DLG.show(
+    ['  † REQUIESCAT IN PACE †','',...eulogy.split('\n').map(l=>`  ${l}`),'',`  Floor:${p.floor}  Lv:${p.level}  Kills:${p.kills}`,'',' [ TAP / ANY KEY ]'],
+    ()=>showScreen('screen-dead'),
+    false
+  );
 }
 
 /* ── Particles ───────────────────────────────────────────────────────────── */
@@ -1178,6 +1389,7 @@ function spawnDmgP(tx,ty,text,color){
   G.particles.push({wx:tx+.5,wy:ty-.2,text:String(text),color,vy:-.02,life:1.3,maxLife:1.3});
 }
 function tickParticles(dt){
+  DLG.tick(dt);
   for(let i=G.particles.length-1;i>=0;i--){
     const p=G.particles[i];p.life-=dt;p.wy+=p.vy;
     if(p.life<=0)G.particles.splice(i,1);
@@ -1218,6 +1430,7 @@ function tickBattleAnim(dt){
 function draw(){
   if(G.phase==='battle'||G.battle) drawBattle();
   else drawDungeon();
+  if(DLG.isActive()) DLG.draw(ctx,canvas.width,canvas.height);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -1471,1133 +1684,3 @@ window.addEventListener('load',()=>{
     ' ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚══════╝';
   updateTitleBest();
 });
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// CRYPTS OF KAEL  ·  LORE & DIALOGUE SYSTEM
-// ─────────────────────────────────────────────────────────────────────────────
-// Kael is a mediocre wizard who couldn't afford a proper tower.
-// He converted his basement into a dungeon and rents it to monsters.
-// You wandered in looking for a bathroom. Everyone is now very confused.
-// ═══════════════════════════════════════════════════════════════════════════════
-
-/* ── Lore data ────────────────────────────────────────────────────────────── */
-const LORE = {
-
-  // Opening crawl shown before floor 1
-  intro: [
-    '                  IN THE YEAR OF OUR LORD',
-    '               FOURTEEN-SOMETHING-OR-OTHER…',
-    '',
-    '  KAEL was a wizard of middling talent.',
-    '  His spells mostly fizzled. His tower',
-    '  application was rejected FOUR TIMES.',
-    '  The deposit alone would have bankrupted him.',
-    '',
-    '  So instead, he dug a hole.',
-    '',
-    '  "I will rent it to monsters," he said.',
-    '  "Passive income," he said.',
-    '  "Totally fine," he said.',
-    '',
-    '  And lo, it was fine. For a while.',
-    '',
-    '  YOU, meanwhile, are just some person',
-    '  who wandered in looking for a bathroom.',
-    '',
-    '  The monsters think you\'re a tax inspector.',
-    '  They are NOT happy.',
-    '',
-    '        [ TAP / PRESS ANY KEY ]',
-  ],
-
-  // Floor arrival narration — one per floor, loops after floor 10
-  floors: [
-    // Floor 1
-    [
-      '  FLOOR 1: THE BASEMENT',
-      '',
-      '  Smells like mildew and poor life choices.',
-      '  A handwritten sign reads:',
-      '  WELCOME TENANTS. NO PARTIES. NO FIRE.',
-      '',
-      '  Below it, in smaller writing:',
-      '  "No tax inspectors. I mean it, Gerald."',
-      '',
-      '  You are not Gerald.',
-      '  This does not help.',
-    ],
-    // Floor 2
-    [
-      '  FLOOR 2: THE FORGOTTEN HALLS',
-      '',
-      '  These halls were forgotten for a reason.',
-      '  Mostly the smell.',
-      '',
-      '  A notice board reads:',
-      '  "MONSTER UNION MEETING — TUES 7PM',
-      '   Agenda: Wages, Benefits, Adventurer Policy',
-      '   Refreshments provided (BYOB)"',
-      '',
-      '  The rats are unionised. Great.',
-    ],
-    // Floor 3
-    [
-      '  FLOOR 3: THE BLOODSTONE CAVES',
-      '',
-      '  Red-veined walls drip with something.',
-      '  Hopefully mineral deposits.',
-      '',
-      '  A skeleton waves at you cheerfully.',
-      '  Then attacks. Then apologises mid-attack.',
-      '  "Sorry! Contractual obligation!"',
-      '',
-      '  You appreciate the honesty.',
-      '  Less so the sword.',
-    ],
-    // Floor 4
-    [
-      '  FLOOR 4: THE FROZEN DEPTHS',
-      '',
-      '  Why is it frozen? KAEL added a "Ice Wing"',
-      '  to attract Premium Tenant Wraiths.',
-      '  They left a 2-star review anyway.',
-      '',
-      '  ("Draughty. Would haunt again.")',
-      '',
-      '  A wraith drifts past reading a newspaper.',
-      '  It\'s yesterday\'s. They\'re dead.',
-      '  Time is a flat circle down here.',
-    ],
-    // Floor 5
-    [
-      '  FLOOR 5: THE INFERNAL PITS',
-      '',
-      '  KAEL\'s premium tier. The demons pay extra',
-      '  for the mood lighting and lava views.',
-      '',
-      '  A framed certificate on the wall:',
-      '  "KAEL\'S DUNGEON — 5-STAR FIEND APPROVED"',
-      '  "Best Structural Integrity: 3rd Year Running"',
-      '',
-      '  You are definitely going to die here.',
-      '  At least the ambiance is nice.',
-    ],
-    // Floor 6
-    [
-      '  FLOOR 6: THE DROWNED VAULTS',
-      '',
-      '  A water feature. KAEL is "very proud of it."',
-      '  It was not supposed to be a water feature.',
-      '  It was supposed to be a library.',
-      '',
-      '  The books are ruins.',
-      '  The spiders love it though.',
-      '  Their webs glitter in the damp.',
-      '  It is, genuinely, kind of pretty.',
-      '  You are still going to die.',
-    ],
-    // Floor 7
-    [
-      '  FLOOR 7: THE OSSUARY',
-      '',
-      '  This is where KAEL stores failed experiments.',
-      '  There are a LOT of experiments.',
-      '',
-      '  A jar labelled "STEVE" watches you pass.',
-      '  You don\'t know what Steve was.',
-      '  Steve doesn\'t know either, probably.',
-      '',
-      '  You keep moving. Steve watches.',
-      '  You don\'t look back.',
-    ],
-    // Floor 8
-    [
-      '  FLOOR 8: THE PHILOSOPHER\'S STAIRWELL',
-      '',
-      '  A Lich is sitting at a desk, writing.',
-      '  "Do NOT disturb me," it says.',
-      '  "I am literally submitting my PhD thesis."',
-      '',
-      '  "\'The Epistemology of Post-Life Cognition.\'',
-      '   Chapter 14. Almost done."',
-      '',
-      '  You disturb it.',
-      '  It is very displeased.',
-      '  Academically AND violently.',
-    ],
-    // Floor 9
-    [
-      '  FLOOR 9: THE WAILING CHAMBERS',
-      '',
-      '  The walls whisper Kael\'s deepest regrets.',
-      '  "Should have taken the tower mortgage."',
-      '  "Should have learned a second spell."',
-      '  "Should have replied to Gerald\'s letters."',
-      '',
-      '  Somewhere above, KAEL is watching',
-      '  on a crystal ball, eating crackers.',
-      '  He doesn\'t look worried.',
-      '  He looks vaguely impressed, actually.',
-    ],
-    // Floor 10+
-    [
-      '  THE FINAL DEPTHS',
-      '',
-      '  You can hear breathing ahead.',
-      '  Not the monster kind.',
-      '  The wizard kind. Nervous. Snacky.',
-      '',
-      '  KAEL himself awaits.',
-      '  He has prepared a speech.',
-      '  He has also prepared an escape portal.',
-      '  Mostly he\'s prepared the escape portal.',
-    ],
-  ],
-
-  // Enemy first-encounter taunts (keyed by enemy name)
-  enemyTaunts: {
-    'Rat': [
-      'The Rat waves a tiny picket sign: "FAIR WAGES NOW"',
-      'The Rat demands to see your adventurer\'s licence.',
-      'This Rat is the shop steward. You are about to regret everything.',
-      'Union rules say it must fight you. It filed a grievance about it.',
-    ],
-    'Spider': [
-      'The Spider has been waiting. It has SUCH plans for you.',
-      '"Finally," hisses the Spider. "A visitor for my web."',
-      'The Spider waves eight legs in greeting. Then attacks with all eight.',
-      'It has been redecorating. You are the centrepiece.',
-    ],
-    'Goblin': [
-      '"Oi! You got a permit for that sword?!"',
-      'The Goblin squints. "You don\'t look like a tax inspector." Pause. "Fight anyway."',
-      '"KAEL said we\'d get overtime for this." It attacks. "We won\'t."',
-      'The Goblin is on its phone. It hangs up. "Gotta go, mum. Work stuff."',
-    ],
-    'Skeleton': [
-      '"I am SO sorry about this," says the Skeleton. It attacks.',
-      '"Contractual obligation, I\'m afraid." The Skeleton sighs. "Nothing personal."',
-      '"You seem nice," it says, sadly raising its sword. "Most people seem nice."',
-      '"If you survive, could you water my plant? Third alcove on the right?"',
-    ],
-    'Troll': [
-      'The Troll is eating a rock. It does not look up. Then it does.',
-      '"Is small. Will still hurt small." The Troll cracks its knuckles.',
-      'The Troll has named its club. The name is "Coincidence." This seems wrong.',
-      '"Troll tired of adventurers." It stands. "Troll will nap after."',
-    ],
-    'Wraith': [
-      '"You interrupt my HAUNTING," it hisses. "I had a whole ATMOSPHERE going."',
-      'The Wraith looks at you. "Living. Ugh." It attacks with maximum disdain.',
-      '"I\'ve been dead 400 years and I\'ve never been this inconvenienced."',
-      '"Fine. FINE. One quick haunting. But I\'m logging this as overtime."',
-    ],
-    'Demon': [
-      '"A mortal? Down HERE?" It looks almost flattered. "You\'re brave or stupid."',
-      'The Demon consults a clipboard. "You\'re not on the list." It attacks anyway.',
-      '"KAEL charged me extra for lava views. I\'m taking it out on you."',
-      '"I got three stars on the dungeon review. THREE." It\'s clearly been stewing.',
-    ],
-    'Dragon': [
-      'A Dragon. In a basement. "Don\'t," it says. "Just don\'t ask."',
-      '"I was promised a MOUNTAIN," it growls. "I got a basement. With a Troll."',
-      '"The ceilings are LOW," it complains, and then breathes fire.',
-      '"Kael gave me a discount. I should have known. I should have KNOWN."',
-    ],
-    'Lich': [
-      '"CHAPTER FOURTEEN," it screams, "WAS ALMOST DONE."',
-      '"Five centuries of unlife," it hisses, "and THIS is how my morning goes."',
-      '"I have a PhD." It brandishes a scroll. "From a GOOD university." It attacks.',
-      '"My supervisor will hear about this," it says, conjuring darkness.',
-    ],
-  },
-
-  // Merchant quips — random each visit
-  merchantQuips: [
-    '"KAEL\'s prices. Not mine. Don\'t look at me like that."',
-    '"Everything\'s authentic dungeon-sourced. Mostly."',
-    '"I\'m just here for the dental plan."',
-    '"The rats unionised the supply chain. Prices went up. Sorry."',
-    '"Pro tip: floor 5 has a lava pool. Very soothing. Don\'t fall in."',
-    '"KAEL asked me to stop selling to adventurers. I said no."',
-    '"I\'ve been here 12 years. I forget what sky looks like."',
-    '"The Skeleton on floor 3 is genuinely lovely. Just… avoid the sword."',
-    '"The Wraiths left a terrible review. I\'m not over it."',
-    '"If you find my mop, please return it. The Troll borrowed it."',
-    '"Genuine question: why ARE you here? The bathroom thing seems unlikely."',
-    '"You\'ve lasted longer than most. That\'s not a compliment yet but it could be."',
-  ],
-
-  // Boss pre-fight monologue (floor 10+ final confrontation)
-  kaelBoss: [
-    '  A wizard in a bathrobe turns around.',
-    '  He is holding crackers.',
-    '',
-    '  "Oh. You actually made it." KAEL looks',
-    '  genuinely surprised. "Gerald never made',
-    '  it past floor 3."',
-    '',
-    '  He eats a cracker.',
-    '',
-    '  "I should probably fight you now."',
-    '  He brushes crumbs off his robe.',
-    '  "I\'ve been practising a speech.',
-    '   It\'s very dramatic."',
-    '',
-    '  He clears his throat.',
-    '',
-    '  "YOU HAVE GONE FAR ENOUGH—"',
-    '',
-    '       [ TAP / PRESS ANY KEY ]',
-  ],
-
-  // Death screen eulogies — random each death
-  eulogies: [
-    'Here lies a brave soul who descended into a dungeon\nsearching for a bathroom.\nThey never found one.',
-    'They fought hard. The Rats fought harder.\n(And they were on overtime, which helps.)',
-    'Cause of death: a skeleton that was genuinely sorry the whole time.',
-    'In retrospect, the sign saying "NO ADVENTURERS"\nshould have been a hint.',
-    'They got further than Gerald.\nThis is the highest praise available.',
-    'The Merchant is sad.\nThis affects prices. Nothing is free.',
-    'The Wraith has written a 1-star review.\n"Adventurer interrupted my haunting.\nWould not recommend."',
-    'A hero in all the ways that matter.\nNone of which saved them.',
-    'The Troll named its club after you.\nThis is either an honour or a threat.',
-    'The Lich finished Chapter 14.\nYou did not contribute. You did not subtract.\nYou simply ceased.',
-    'KAEL watched from his crystal ball.\nHe ate crackers. He felt bad. He ate more crackers.',
-    'They died as they lived: confused about\nwhy the basement had so many monsters in it.',
-  ],
-
-  // Victory text — reached floor 10 and fought past
-  victory: [
-    '  KAEL finishes his speech.',
-    '  You are, somehow, still standing.',
-    '',
-    '  KAEL stares.',
-    '  You stare back.',
-    '',
-    '  "...right," he says.',
-    '',
-    '  He opens his escape portal.',
-    '  Steps through it.',
-    '  Closes it behind him.',
-    '',
-    '  The dungeon is empty.',
-    '  The monsters have fled or been defeated.',
-    '  It smells like mildew and closure.',
-    '',
-    '  You look around.',
-    '',
-    '  There is still no bathroom.',
-    '',
-    '       ★  YOU WIN  ★',
-    '',
-    '  (Kael is fine. He got a studio flat',
-    '   in the capital. Two stars on Zillow.)',
-    '',
-    '       [ TAP / PRESS ANY KEY ]',
-  ],
-};
-
-/* ═══════════════════════════════════════════════════════════════════════════════
-   DIALOGUE ENGINE
-   Draws a typewriter-animated text overlay on the canvas.
-   Dismissable with any key or tap. Callback fires on dismiss.
-═══════════════════════════════════════════════════════════════════════════════ */
-const Dialogue = (() => {
-  let active   = false;
-  let lines    = [];
-  let charIdx  = 0;   // how many chars of current scroll are shown
-  let lineIdx  = 0;   // which line we're typing
-  let totalChars = 0; // chars shown so far across all lines
-  let speed    = 28;  // chars per second
-  let dt_acc   = 0;
-  let onDone   = null;
-  let done     = false; // all text shown, waiting for dismiss
-
-  // Pre-computed full-text length for skip detection
-  let fullLen  = 0;
-
-  function show(linesArray, callback, fastSpeed=false) {
-    lines     = linesArray;
-    charIdx   = 0;
-    lineIdx   = 0;
-    totalChars= 0;
-    speed     = fastSpeed ? 80 : 28;
-    dt_acc    = 0;
-    done      = false;
-    active    = true;
-    onDone    = callback || null;
-    fullLen   = lines.reduce((a,l)=>a+l.length,0);
-  }
-
-  function dismiss() {
-    if (!active) return;
-    if (!done) {
-      // First tap: reveal all text instantly
-      lineIdx  = lines.length - 1;
-      charIdx  = lines[lineIdx]?.length || 0;
-      done     = true;
-      return;
-    }
-    // Second tap: actually close
-    active = false;
-    const cb = onDone;
-    onDone = null;
-    if (cb) cb();
-  }
-
-  function tick(dt) {
-    if (!active || done) return;
-    dt_acc += dt * speed;
-    const steps = Math.floor(dt_acc);
-    dt_acc -= steps;
-    for (let s = 0; s < steps; s++) {
-      if (lineIdx >= lines.length) { done = true; return; }
-      charIdx++;
-      if (charIdx > lines[lineIdx].length) {
-        lineIdx++;
-        charIdx = 0;
-        if (lineIdx >= lines.length) { done = true; return; }
-      }
-    }
-  }
-
-  function draw(ctx, W, H) {
-    if (!active) return;
-
-    // Dark overlay
-    ctx.fillStyle = 'rgba(0,0,0,.88)';
-    ctx.fillRect(0, 0, W, H);
-
-    // Panel
-    const pw = Math.min(W - 24, 480);
-    const ph = Math.min(H - 80, 420);
-    const px = (W - pw) / 2;
-    const py = (H - ph) / 2;
-
-    ctx.fillStyle = '#0d0900';
-    rrCtx(ctx, px, py, pw, ph, 4); ctx.fill();
-    ctx.strokeStyle = '#7a5000'; ctx.lineWidth = 2;
-    rrCtx(ctx, px, py, pw, ph, 4); ctx.stroke();
-    ctx.strokeStyle = 'rgba(255,179,0,.08)'; ctx.lineWidth = 1;
-    rrCtx(ctx, px+4, py+4, pw-8, ph-8, 3); ctx.stroke();
-
-    // Text
-    const lh = Math.min(22, (ph - 60) / Math.max(lines.length, 8));
-    const fs = Math.max(12, lh * 0.85);
-    ctx.font = `${fs}px VT323, monospace`;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'top';
-
-    const tx = px + 18, ty0 = py + 16;
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      let shown;
-      if (i < lineIdx)        shown = line;
-      else if (i === lineIdx) shown = line.slice(0, charIdx);
-      else                    shown = '';
-      if (!shown && i > lineIdx) break;
-
-      // Colour first line differently if it looks like a header
-      const isHeader = (i === 0 && line.trim().startsWith('FLOOR')) ||
-                       (i === 0 && line.includes('★')) ||
-                       line.includes('KAEL') ||
-                       line.trim().startsWith('  FLOOR');
-      ctx.fillStyle = isHeader ? '#ffe066' : i < 2 ? '#ffcc66' : '#cc9933';
-      if (line.startsWith('       [') || line.startsWith('        [') || line.includes('TAP')) {
-        ctx.fillStyle = done ? '#ffee88' : '#886633';
-        // Blink when done
-        if (done && Math.floor(Date.now() / 400) % 2 === 0) ctx.fillStyle = '#ffee44';
-      }
-      if (line.trim() === '') continue;
-      ctx.fillText(shown, tx, ty0 + i * lh);
-    }
-
-    // Cursor blink on current line
-    if (!done && lineIdx < lines.length) {
-      const cursorOn = Math.floor(Date.now() / 280) % 2 === 0;
-      if (cursorOn) {
-        const curLine = lines[lineIdx].slice(0, charIdx);
-        const cx2 = tx + ctx.measureText(curLine).width + 1;
-        const cy2 = ty0 + lineIdx * lh;
-        ctx.fillStyle = '#ffcc66';
-        ctx.fillRect(cx2, cy2 + 2, 6, fs - 2);
-      }
-    }
-  }
-
-  return { show, dismiss, tick, draw, isActive: () => active };
-})();
-
-/* ── Hook dismiss into existing input handlers ───────────────────────────── */
-// Intercept keydown when dialogue is open
-const _origKeydown = document.onkeydown;
-document.addEventListener('keydown', e => {
-  if (Dialogue.isActive()) { Dialogue.dismiss(); e.preventDefault(); e.stopPropagation(); }
-}, true); // capture phase — runs before game keydown
-
-// Intercept canvas tap
-canvas.addEventListener('touchstart', e => {
-  if (Dialogue.isActive()) { e.preventDefault(); Dialogue.dismiss(); }
-}, { passive: false, capture: true });
-
-canvas.addEventListener('click', e => {
-  if (Dialogue.isActive()) { Dialogue.dismiss(); }
-}, { capture: true });
-
-/* ── Integrate into main loop tick ──────────────────────────────────────────*/
-// Patch the loop to tick + draw dialogue AFTER everything else
-const _origLoop = loop; // reference to existing loop — we'll patch draw instead
-
-// Patch draw() to also draw dialogue overlay
-const _origDraw = draw;
-function draw() {
-  _origDraw();
-  if (Dialogue.isActive()) {
-    Dialogue.draw(ctx, canvas.width, canvas.height);
-  }
-}
-
-// Patch loop to tick dialogue
-const _origLoopFn = window._loopRef; // we'll tick via tickParticles wrapper
-const _origTickParticles = tickParticles;
-function tickParticles(dt) {
-  _origTickParticles(dt);
-  Dialogue.tick(dt);
-}
-
-/* ── Track which enemies have been taunted already this run ─────────────────*/
-const taunted = new Set();
-
-/* ═══════════════════════════════════════════════════════════════════════════════
-   LORE HOOKS — patch existing functions
-═══════════════════════════════════════════════════════════════════════════════ */
-
-/* ── startGame: show intro crawl first ──────────────────────────────────────*/
-const _origStartGame = startGame;
-function startGame() {
-  taunted.clear();
-  _origStartGame();
-  // Show intro on top of the freshly-started game
-  Dialogue.show(LORE.intro, null);
-}
-
-/* ── loadFloor: show floor lore when arriving ───────────────────────────────*/
-const _origLoadFloor = loadFloor;
-function loadFloor(floorNum) {
-  _origLoadFloor(floorNum);
-  const idx = Math.min(floorNum - 1, LORE.floors.length - 1);
-  const lines = LORE.floors[idx];
-
-  // Special: floor 10+ shows Kael boss monologue
-  if (floorNum >= 10) {
-    Dialogue.show(LORE.kaelBoss, null, true);
-    return;
-  }
-  Dialogue.show(lines, null, true);
-}
-
-/* ── enterBattle: show enemy taunt on FIRST encounter per enemy TYPE ────────*/
-const _origEnterBattle = enterBattle;
-function enterBattle(enemy) {
-  _origEnterBattle(enemy);
-  const pool = LORE.enemyTaunts[enemy.name];
-  if (pool && !taunted.has(enemy.name)) {
-    taunted.add(enemy.name);
-    const taunt = pool[Math.floor(Math.random() * pool.length)];
-    // Show as a quick single-line overlay on top of the battle
-    Dialogue.show(['', `  ${enemy.name.toUpperCase()} ENCOUNTER`, '', `  "${taunt}"`, '', '  [ TAP / KEY ]'], null, true);
-  }
-}
-
-/* ── openShop: merchant quip ─────────────────────────────────────────────────*/
-const _origOpenShop = openShop;
-function openShop() {
-  _origOpenShop();
-  const quip = LORE.merchantQuips[Math.floor(Math.random() * LORE.merchantQuips.length)];
-  Dialogue.show([
-    '  KAEL\'S DUNGEON EMPORIUM',
-    '  ─────────────────────────────',
-    '',
-    `  ${quip}`,
-    '',
-    '  [ TAP / KEY to browse ]',
-  ], null, true);
-}
-
-/* ── playerDies: absurd eulogy ───────────────────────────────────────────────*/
-const _origPlayerDies = playerDies;
-function playerDies() {
-  const eulogy = LORE.eulogies[Math.floor(Math.random() * LORE.eulogies.length)];
-  const p = G.player;
-  // Show overlay first, then trigger death screen on dismiss
-  Dialogue.show([
-    '  † REQUIESCAT IN PACE †',
-    '',
-    ...eulogy.split('\n').map(l => `  ${l}`),
-    '',
-    `  Floor: ${p.floor}  ·  Level: ${p.level}  ·  Kills: ${p.kills}`,
-    '',
-    '  [ TAP / KEY ]',
-  ], () => _origPlayerDies(), false);
-}
-
-/* ── nextFloor: check for victory ────────────────────────────────────────────*/
-const _origNextFloor = nextFloor;
-function nextFloor() {
-  const nextF = G.player.floor + 1;
-  if (nextF >= 11) {
-    // VICTORY — show ending, then loop back
-    Dialogue.show(LORE.victory, () => {
-      // After victory, loop the dungeon (roguelike style — infinite floors)
-      msg('KAEL is gone. But his dungeon remains…', '#ffe066');
-      msg('Starting over — deeper, stranger, worse.', '#ffcc44');
-      _origNextFloor();
-    }, false);
-  } else {
-    _origNextFloor();
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   ██╗      ██████╗ ██████╗ ███████╗
-   ██║     ██╔═══██╗██╔══██╗██╔════╝
-   ██║     ██║   ██║██████╔╝█████╗
-   ██║     ██║   ██║██╔══██╗██╔══╝
-   ███████╗╚██████╔╝██║  ██║███████╗
-   ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
-   DIALOGUE & LORE SYSTEM
-   Self-contained module. Draws a CRT text-box overlay on canvas.
-   Typewriter effect, speaker portrait (ASCII), tap/key to advance.
-   Never blocks the game loop — phase stays unchanged.
-══════════════════════════════════════════════════════════════════════════════ */
-
-/* ── Dialogue state ───────────────────────────────────────────────────────── */
-let DLG = null;
-/*  DLG = {
-      lines:   [{speaker, text, col}]  full script
-      idx:     current line index
-      typed:   chars revealed so far
-      timer:   time since last char
-      speed:   chars per second
-      onDone:  callback when all lines dismissed
-      once:    key used to mark "shown" in SHOWN_DLGS
-    }
-*/
-const SHOWN_DLGS = new Set();  // keys of already-shown one-time dialogues
-
-/* ── Typewriter speed ─────────────────────────────────────────────────────── */
-const TW_SPEED = 40;   // chars/sec normal
-const TW_FAST  = 200;  // chars/sec when player holds skip
-
-/* ── Speaker colours ─────────────────────────────────────────────────────── */
-const SPK = {
-  kael:     { col:'#ff88ff', label:'KAEL THE MAGNIFICENT' },
-  narrator: { col:'#aaccff', label:'[ NARRATOR ]'         },
-  merchant: { col:'#44ffaa', label:'OSRIC THE MERCHANT'   },
-  you:      { col:'#ffee88', label:'YOU'                  },
-  ghost:    { col:'#8888ff', label:'RESTLESS SPIRIT'      },
-  rat:      { col:'#cc8833', label:'THE RAT'              },
-  lich:     { col:'#ff2277', label:'KAEL (LICH FORM)'     },
-  system:   { col:'#888888', label:'— SYSTEM —'           },
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   THE LORE OF KAEL  (the good stuff)
-══════════════════════════════════════════════════════════════════════════════ */
-
-/* ── Intro — shown once on very first new game ── */
-const INTRO_DIALOGUE = {
-  once: 'intro',
-  lines: [
-    { spk:'narrator', text:"Somewhere beneath the village of Millhaven lies a dungeon no one asked for." },
-    { spk:'narrator', text:"It was built by Kael — a wizard of middling talent and catastrophic overconfidence." },
-    { spk:'kael',     text:"I shall achieve IMMORTALITY by absorbing the life-force of every living thing in my dungeon! MWAHAHA—" },
-    { spk:'narrator', text:"He then accidentally trapped himself in the lowest chamber." },
-    { spk:'kael',     text:"I meant to do that." },
-    { spk:'narrator', text:"He did not." },
-    { spk:'narrator', text:"In a fit of pique, he cursed the entire dungeon. Anyone who enters and dies is reborn at the entrance." },
-    { spk:'narrator', text:"Forever. Until they reach him. Nobody ever has." },
-    { spk:'kael',     text:"It's been 400 years. I'm so bored. PLEASE just come kill me already." },
-    { spk:'you',      text:"...Did you just ask me to kill you?" },
-    { spk:'kael',     text:"I said no such thing. The dungeon will now try to murder you. Godspeed." },
-    { spk:'narrator', text:"You descend. Again. As many times as it takes." },
-  ]
-};
-
-/* ── First step (run 2+, no intro) ── */
-const RERUN_INTROS = [
-  [{ spk:'kael', text:"Oh. You again. Different face, same doomed energy. Welcome back." }],
-  [{ spk:'kael', text:"My curse resets you to the entrance every time you die. FYI. Not a bug." }],
-  [{ spk:'narrator', text:"Another hopeful descends. Kael sighs audibly from 10 floors below." }],
-  [{ spk:'kael', text:"I've watched 847 adventurers die in here. You all make the same face on floor 3." }],
-  [{ spk:'system', text:"Loading dungeon... Loading dungeon... Loading dungeon... this is fine." }],
-];
-
-/* ── Floor entry ── (indexed by floor number, with fallbacks) */
-const FLOOR_DIALOGUES = {
-  1: [
-    { spk:'narrator', text:"Floor 1. The Stone Crypts. It smells like old socks and disappointment." },
-    { spk:'kael',     text:"I decorated this floor myself. The bones are for ATMOSPHERE." },
-  ],
-  2: [
-    { spk:'narrator', text:"Floor 2. The rats down here are unionised. They filed a grievance last Tuesday." },
-    { spk:'kael',     text:"I gave them healthcare. Seemed only fair since I created them." },
-  ],
-  3: [
-    { spk:'narrator', text:"The Forgotten Halls. Forgotten mostly because everyone who sees them dies shortly after." },
-    { spk:'kael',     text:"I had a decorator. He... became part of the decor. Moving on." },
-  ],
-  4: [
-    { spk:'ghost',    text:"Turn baaack... there is only deeeath..." },
-    { spk:'you',      text:"Are you a ghost?" },
-    { spk:'ghost',    text:"No I'm a financial advisor. YES I'M A GHOST. LEAVE." },
-  ],
-  5: [
-    { spk:'narrator', text:"The Bloodstone Caves. The red walls are NOT blood. Probably." },
-    { spk:'kael',     text:"Okay SOME of it is blood. A normal amount of blood. Stop judging me." },
-  ],
-  6: [
-    { spk:'narrator', text:"Halfway there. Kael can feel you approaching and is stress-eating ectoplasm." },
-    { spk:'kael',     text:"I am NOT stress-eating. I eat ectoplasm recreationally. There's a difference." },
-  ],
-  7: [
-    { spk:'narrator', text:"The Frozen Depths. It is extremely cold. Kael installed air conditioning in 1687." },
-    { spk:'you',      text:"Why would a dungeon NEED air conditioning?" },
-    { spk:'kael',     text:"I get hot when I'm nervous, OKAY? Stop asking questions." },
-  ],
-  8: [
-    { spk:'narrator', text:"Only a few floors remain. The dungeon grows quieter. Even the rats seem nervous." },
-    { spk:'kael',     text:"I told the demons on this floor to be extra mean. They said 'yes boss' and I felt good about that." },
-  ],
-  9: [
-    { spk:'narrator', text:"The Infernal Pits. The heat is genuine. Kael added a dragon on this floor as a 'final exam.'" },
-    { spk:'kael',     text:"If you can beat Gerald, you deserve to face me. Gerald is the dragon. He goes by Gerald." },
-  ],
-  10: [
-    { spk:'narrator', text:"The lowest floor. The air crackles with 400 years of trapped magical frustration." },
-    { spk:'kael',     text:"You actually made it. I'm impressed. And terrified. Mostly terrified. Let's fight." },
-  ],
-};
-
-/* ── First battle tutorial (shown once) ── */
-const FIRST_BATTLE_DIALOGUE = {
-  once: 'firstbattle',
-  lines: [
-    { spk:'narrator', text:"A Rat blocks your path. It looks angry about something." },
-    { spk:'rat',      text:"We're angry about EVERYTHING. Have you SEEN this dungeon?" },
-    { spk:'narrator', text:"Choose an action: Attack, Quickstrike, Heavy Blow, Defend, Heal, or Flee." },
-    { spk:'narrator', text:"Defend halves damage. Heavy Blow hits hard but the enemy gets a free turn after." },
-    { spk:'narrator', text:"Heal works 3 times per battle. Flee has a 50%+ chance to escape." },
-    { spk:'rat',      text:"Are you done reading the tutorial? I'd like to bite you now." },
-  ]
-};
-
-/* ── Boss pre-fight (by enemy name) ── */
-const BOSS_DIALOGUES = {
-  'Lich': [
-    { spk:'kael', text:"You found me. 400 years, and you actually FOUND ME." },
-    { spk:'kael', text:"Do you know what it's like to be stuck down here? Alone? Eternally?" },
-    { spk:'you',  text:"You literally cursed the dungeon yourself." },
-    { spk:'kael', text:"DETAILS. Look, if you defeat me, the curse breaks. Everyone goes free. Including you." },
-    { spk:'kael', text:"...Unless you die. Then it starts again. Obviously. That's the curse. I didn't say it was a GOOD curse." },
-    { spk:'you',  text:"You're the worst wizard I've ever met." },
-    { spk:'kael', text:"I have a certificate. Anyway. PREPARE TO FIGHT ME. Please. I'm begging you." },
-  ],
-  'Dragon': [
-    { spk:'narrator', text:"The dragon Gerald blocks the passage. He looks you up and down." },
-    { spk:'narrator', text:"He produces a small laminated card. It reads: 'PLEASE DO NOT PROCEED. — Mgmt.'" },
-    { spk:'you',      text:"Is that a union card?" },
-    { spk:'narrator', text:"It is, in fact, a union card. Gerald has representation. This won't stop him killing you." },
-  ],
-  'Demon': [
-    { spk:'narrator', text:"A Demon materialises from the shadows. It seems mildly inconvenienced to be here." },
-    { spk:'narrator', text:"'Kael promised us dental,' it mutters. 'Four centuries and still no dental.'" },
-  ],
-  'Wraith': [
-    { spk:'ghost', text:"I was an adventurer like you. I got to floor 7. I was SO CLOSE." },
-    { spk:'you',   text:"That's... sad." },
-    { spk:'ghost', text:"NOW I GUARD THIS HALL FOREVER. Want to know the worst part?" },
-    { spk:'ghost', text:"I forgot why I came down here. Gold? A princess? A bet? Can't remember. Anyway. FIGHT TIME." },
-  ],
-};
-
-/* ── Shop greetings (random pick) ── */
-const MERCHANT_HELLOS = [
-  [{ spk:'merchant', text:"Ah! A customer! I was beginning to think Kael's monsters ate everyone." }],
-  [
-    { spk:'merchant', text:"Welcome, welcome. I run a legitimate business. In a cursed dungeon. Don't ask questions." },
-    { spk:'merchant', text:"Osric's Dungeon Emporium. Same-day delivery. No refunds. No survivors." },
-  ],
-  [{ spk:'merchant', text:"Do you know how hard it is to restock inventory when your suppliers are UNDEAD?" }],
-  [{ spk:'merchant', text:"Buy something. Please. I've been here since 1703. PLEASE." }],
-  [
-    { spk:'merchant', text:"Kael hired me. Said the dungeon needed 'economic diversity.'" },
-    { spk:'merchant', text:"I said 'sir this is a murder maze' and he said 'and?' So here I am." },
-  ],
-];
-
-/* ── Death quips — Kael speaks each time you die (rotates) ── */
-const DEATH_QUIPS = [
-  "Ha. And you're back at the top. I did WARN you.",
-  "Oh look. Floor 1 again. How familiar.",
-  "You know, statistically, nobody gets further on attempt 2. But you might! ...You won't.",
-  "My curse is working PERFECTLY. I'm so pleased.",
-  "Breathe. Reset. Try again. The dungeon is patient. Unlike me.",
-  "Another death. Another rebirth. The cycle continues. I'm not even sorry anymore.",
-  "400 years of this. Do you have any idea what it does to a wizard's self-esteem?",
-  "That was embarrassing. For both of us. But mostly you.",
-  "Fun fact: the record is dying on floor 1. In 3 steps. You're not going to beat it. Probably.",
-  "Don't be discouraged! Many have failed before you. All of them, actually. Every single one.",
-  "Would it help if I said 'try again'? No? Would it help if I didn't? Let me know.",
-];
-let deathQuipIdx = 0;
-
-/* ── Victory (beat the Lich) ── */
-const VICTORY_DIALOGUE = [
-  { spk:'kael',     text:"...ow." },
-  { spk:'kael',     text:"You actually did it. I can't believe it. YOU DID IT." },
-  { spk:'narrator', text:"The ancient curse begins to unravel. The dungeon shakes." },
-  { spk:'kael',     text:"400 years trapped. 847 failed challengers. And YOU, somehow, are the one." },
-  { spk:'you',      text:"Was the treasure real at least?" },
-  { spk:'kael',     text:"...Define 'real.'" },
-  { spk:'narrator', text:"The dungeon collapses. Light floods in. Kael, finally free, evaporates into a shower of bad decisions." },
-  { spk:'narrator', text:"You escape with your life, no gold (you spent it all at Osric's), and a very good story." },
-  { spk:'narrator', text:"     ✦ YOU WIN ✦     Thanks for playing Crypts of Kael." },
-  { spk:'system',   text:"The curse is broken. All saved progress is cleared. (Just kidding. Play again.)" },
-];
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   DIALOGUE ENGINE
-══════════════════════════════════════════════════════════════════════════════ */
-
-/** Queue a dialogue. script = {once?, lines:[{spk,text}]} or just an array of lines */
-function showDialogue(script, onDone) {
-  // Handle both formats
-  const def = Array.isArray(script) ? { lines: script } : script;
-
-  // Skip if this one has already been shown (once-only)
-  if (def.once && SHOWN_DLGS.has(def.once)) {
-    if (onDone) onDone();
-    return;
-  }
-  if (def.once) SHOWN_DLGS.add(def.once);
-
-  DLG = {
-    lines:  def.lines.map(l => ({
-      spk:    l.spk || 'narrator',
-      text:   l.text,
-    })),
-    idx:    0,
-    typed:  0,
-    timer:  0,
-    speed:  TW_SPEED,
-    onDone: onDone || null,
-    skipHeld: false,
-  };
-}
-
-/** Advance (skip current line or move to next) */
-function advanceDialogue() {
-  if (!DLG) return;
-  const line = DLG.lines[DLG.idx];
-  if (DLG.typed < line.text.length) {
-    // Skip typewriter — reveal full line
-    DLG.typed = line.text.length;
-  } else {
-    // Next line
-    DLG.idx++;
-    DLG.typed = 0;
-    DLG.timer = 0;
-    if (DLG.idx >= DLG.lines.length) {
-      const cb = DLG.onDone;
-      DLG = null;
-      if (cb) cb();
-    }
-  }
-}
-
-/** Tick typewriter — call from main loop */
-function tickDialogue(dt) {
-  if (!DLG) return;
-  const line = DLG.lines[DLG.idx];
-  if (DLG.typed >= line.text.length) return; // waiting for advance
-  DLG.timer += dt * (DLG.skipHeld ? TW_FAST : TW_SPEED);
-  const target = Math.floor(DLG.timer);
-  DLG.typed = Math.min(line.text.length, target);
-}
-
-/** Draw the dialogue box on top of everything */
-function drawDialogue() {
-  if (!DLG) return;
-  const W = canvas.width, H = canvas.height;
-  const line = DLG.lines[DLG.idx];
-  const spk = SPK[line.spk] || SPK.narrator;
-
-  // Box dimensions — lower third of canvas
-  const bh = Math.min(120, H * .32);
-  const bw = W - 20;
-  const bx = 10, by = H - bh - 10;
-
-  // Background
-  ctx.fillStyle = 'rgba(6, 4, 0, 0.93)';
-  rrCtx(ctx, bx, by, bw, bh, 5);
-  ctx.fill();
-
-  // Border — speaker colour
-  ctx.strokeStyle = spk.col;
-  ctx.lineWidth = 2;
-  rrCtx(ctx, bx, by, bw, bh, 5);
-  ctx.stroke();
-
-  // Inner accent line
-  ctx.strokeStyle = spk.col + '33';
-  ctx.lineWidth = 1;
-  rrCtx(ctx, bx + 3, by + 3, bw - 6, bh - 6, 4);
-  ctx.stroke();
-
-  // Speaker name tag
-  const tagH = 18;
-  ctx.fillStyle = spk.col;
-  ctx.font = `10px 'Press Start 2P', monospace`;
-  ctx.textAlign = 'left';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(spk.label, bx + 12, by + tagH * .6);
-
-  // Divider
-  ctx.fillStyle = spk.col + '44';
-  ctx.fillRect(bx + 8, by + tagH + 2, bw - 16, 1);
-
-  // Dialogue text (word-wrapped typewriter)
-  const textX = bx + 14, textY = by + tagH + 12;
-  const maxW = bw - 28;
-  const fontSize = Math.max(14, Math.min(18, H * .033));
-  ctx.font = `${fontSize}px VT323, monospace`;
-  ctx.fillStyle = '#ffe8bb';
-  ctx.textAlign = 'left';
-  ctx.textBaseline = 'top';
-
-  const revealed = line.text.slice(0, DLG.typed);
-  const wrappedLines = wrapText(ctx, revealed, maxW);
-  const lineH = fontSize + 3;
-  wrappedLines.forEach((wl, i) => {
-    if (textY + i * lineH + lineH > by + bh - 12) return; // clip
-    ctx.fillText(wl, textX, textY + i * lineH);
-  });
-
-  // "▶ continue" blink — only when line is fully revealed
-  if (DLG.typed >= line.text.length) {
-    const blink = Math.floor(Date.now() / 400) % 2 === 0;
-    if (blink) {
-      ctx.fillStyle = spk.col;
-      ctx.font = `10px 'Press Start 2P', monospace`;
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'bottom';
-      ctx.fillText('▶ CONTINUE', bx + bw - 12, by + bh - 6);
-    }
-  }
-
-  // Progress dots (e.g. 2 / 5)
-  ctx.fillStyle = 'rgba(255,200,100,.3)';
-  ctx.font = `10px VT323, monospace`;
-  ctx.textAlign = 'right';
-  ctx.textBaseline = 'top';
-  ctx.fillText(`${DLG.idx + 1} / ${DLG.lines.length}`, bx + bw - 12, by + 4);
-}
-
-/** Simple word-wrap helper */
-function wrapText(ctx, text, maxW) {
-  const words = text.split(' ');
-  const lines = [];
-  let line = '';
-  for (const word of words) {
-    const test = line ? line + ' ' + word : word;
-    if (ctx.measureText(test).width > maxW && line) {
-      lines.push(line);
-      line = word;
-    } else {
-      line = test;
-    }
-  }
-  if (line) lines.push(line);
-  return lines;
-}
-
-/* ── Input hooks for dialogue ─────────────────────────────────────────────── */
-// Intercept keydown in capture phase so dialogue gets input before game
-document.addEventListener('keydown', e => {
-  if (DLG) {
-    // Hold any key = fast-forward; single press = advance
-    if (e.key === 'Shift' || e.key === 'Control') { DLG.skipHeld = true; return; }
-    advanceDialogue();
-    e.preventDefault();
-    return;
-  }
-}, true); // capture phase — fires before existing handlers
-document.addEventListener('keyup', () => { if (DLG) DLG.skipHeld = false; });
-
-// Tap canvas to advance dialogue
-canvas.addEventListener('touchend', () => { if (DLG) { advanceDialogue(); } }, { passive: true, capture: true });
-canvas.addEventListener('click', () => { if (DLG) { advanceDialogue(); } }, true);
-
-/* ── tickDialogue in the main loop ───────────────────────────────────────── */
-// Patch loop to tick dialogue
-const _origLoop = loop;
-// Re-declare loop to include dialogue tick
-// (we override by reassigning the rAF callback via a wrapper flag)
-let _dlgLoopPatched = false;
-(function patchLoop() {
-  // We can't reassign `loop` itself since rAF already holds the reference.
-  // Instead patch tickParticles to piggyback — it's called every frame.
-  const _orig = tickParticles;
-  window._tickParticlesOrig = _orig;
-  // Actually cleanest: patch the draw function directly
-})();
-
-/* ── drawDialogue called at end of draw() ─────────────────────────────────── */
-// Patch draw() by replacing it
-const _origDraw = draw;
-window.draw = function draw() {
-  _origDraw();
-  drawDialogue();
-};
-
-/* ── tickDialogue patched into tickParticles (called every frame) ────────── */
-const _origTickParticles = tickParticles;
-window.tickParticles = function tickParticles(dt) {
-  _origTickParticles(dt);
-  tickDialogue(dt);
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: startGame — show intro or rerun quip
-══════════════════════════════════════════════════════════════════════════════ */
-const _origStartGame = startGame;
-window.startGame = function startGame() {
-  _origStartGame();
-  const isFirstEver = !SHOWN_DLGS.has('intro') && !SHOWN_DLGS.has('introdone');
-  if (isFirstEver) {
-    showDialogue(INTRO_DIALOGUE);
-  } else {
-    const pool = RERUN_INTROS;
-    const pick = pool[Math.floor(Math.random() * pool.length)];
-    showDialogue({ lines: pick });
-  }
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: loadFloor — floor entry lore (once per floor per run)
-══════════════════════════════════════════════════════════════════════════════ */
-const _origLoadFloor = loadFloor;
-window.loadFloor = function loadFloor(floorNum) {
-  _origLoadFloor(floorNum);
-  const script = FLOOR_DIALOGUES[floorNum];
-  if (script && floorNum > 1) {
-    // Small delay so dungeon renders first
-    setTimeout(() => {
-      if (G && G.player.floor === floorNum)
-        showDialogue({ lines: script });
-    }, 200);
-  }
-  // First battle tutorial
-  if (floorNum === 1) {
-    // Will be triggered on first battle, not here
-  }
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: enterBattle — boss monologue + first-battle tutorial
-══════════════════════════════════════════════════════════════════════════════ */
-const _origEnterBattle = enterBattle;
-window.enterBattle = function enterBattle(enemy) {
-  // First battle tutorial (shown once ever)
-  if (!SHOWN_DLGS.has('firstbattle')) {
-    showDialogue(FIRST_BATTLE_DIALOGUE, () => _origEnterBattle(enemy));
-    return;
-  }
-  // Boss-specific pre-fight dialogue
-  const bossDlg = BOSS_DIALOGUES[enemy.name];
-  if (bossDlg && !SHOWN_DLGS.has('boss_' + enemy.name)) {
-    SHOWN_DLGS.add('boss_' + enemy.name);
-    showDialogue({ lines: bossDlg }, () => _origEnterBattle(enemy));
-    return;
-  }
-  // Random rare flavour — 8% chance on any enemy
-  if (Math.random() < 0.08) {
-    const quips = [
-      [{ spk:'kael', text:"Oh that one is PARTICULARLY nasty. Good luck. (I say that sarcastically.)" }],
-      [{ spk:'kael', text:"Fight! Prove yourself! Or don't. I've seen this before. Many times." }],
-      [{ spk:'narrator', text:"The enemy squares up. You square up. A tumbleweed blows through somehow." }],
-      [{ spk:'kael', text:"I should mention I buffed this enemy last Tuesday. Forgot to mention it. Oops." }],
-    ];
-    const pick = quips[Math.floor(Math.random() * quips.length)];
-    showDialogue({ lines: pick }, () => _origEnterBattle(enemy));
-    return;
-  }
-  _origEnterBattle(enemy);
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: openShop — merchant greeting (once per shop visit)
-══════════════════════════════════════════════════════════════════════════════ */
-const _origOpenShop = openShop;
-window.openShop = function openShop() {
-  _origOpenShop();
-  const pool = MERCHANT_HELLOS;
-  const pick = pool[Math.floor(Math.random() * pool.length)];
-  showDialogue({ lines: pick });
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: playerDies — Kael death quip
-══════════════════════════════════════════════════════════════════════════════ */
-const _origPlayerDies = playerDies;
-window.playerDies = function playerDies() {
-  const quip = DEATH_QUIPS[deathQuipIdx % DEATH_QUIPS.length];
-  deathQuipIdx++;
-  // Show quip, THEN trigger the original death screen
-  showDialogue(
-    { lines: [{ spk: 'kael', text: quip }] },
-    () => _origPlayerDies()
-  );
-};
-
-/* ══════════════════════════════════════════════════════════════════════════════
-   HOOK: Victory — beat the Lich
-══════════════════════════════════════════════════════════════════════════════ */
-// Patch exitBattle to check for Lich victory
-const _origExitBattle = exitBattle;
-window.exitBattle = function exitBattle(won) {
-  const wasLich = G.battle?.enemy?.name === 'Lich';
-  _origExitBattle(won);
-  if (won && wasLich) {
-    setTimeout(() => {
-      showDialogue({ lines: VICTORY_DIALOGUE });
-    }, 600);
-  }
-};
-
-/* ── Mark intro as done after first run ───────────────────────────────────── */
-// After intro finishes, mark it so reruns get the shorter quips
-const _origIntroOnce = INTRO_DIALOGUE.once;
-// This is handled by showDialogue adding to SHOWN_DLGS automatically. ✓
-
-/* ── Block game input while dialogue is showing ──────────────────────────── */
-// Patch playerAction to do nothing while DLG is active
-const _origPlayerAction = playerAction;
-window.playerAction = function playerAction(dir) {
-  if (DLG) { advanceDialogue(); return; }
-  _origPlayerAction(dir);
-};
-// Same for battle actions
-const _origPlayerBattleAction = playerBattleAction;
-window.playerBattleAction = function playerBattleAction(skillIdx) {
-  if (DLG) { advanceDialogue(); return; }
-  _origPlayerBattleAction(skillIdx);
-};
-// D-pad during dialogue
-const _origHandleBattleKey = handleBattleKey;
-window.handleBattleKey = function handleBattleKey(key) {
-  if (DLG) { advanceDialogue(); return; }
-  _origHandleBattleKey(key);
-};
