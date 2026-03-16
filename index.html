@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0a0800">
+  <title>CRYPTS OF KAEL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════ TITLE ═══════════ -->
+  <div id="screen-title" class="screen active">
+    <div class="title-scanlines"></div>
+    <div class="title-inner">
+      <div class="title-pre">── PIXEL DUNGEON ROGUELIKE ──</div>
+      <pre class="title-art" id="title-art"></pre>
+      <h1 class="game-title">CRYPTS <span class="title-of">OF</span> KAEL</h1>
+      <p class="title-lore">A wizard. A basement. A very inconvenient dungeon.<br>You just wanted a bathroom.</p>
+      <div class="title-blink">▶ PRESS START ◀</div>
+      <button class="crt-btn" id="btn-start">BEGIN DESCENT</button>
+      <div id="best-score" class="best-score"></div>
+      <div class="title-controls">
+        <div class="ctrl-row"><kbd>WASD/ARROWS</kbd> Move &nbsp; <kbd>QE/ZC</kbd> Diagonal</div>
+        <div class="ctrl-row"><kbd>1-6 / ENTER</kbd> Battle actions &nbsp; <kbd>.</kbd> Wait</div>
+        <div class="ctrl-row"><kbd>TAP / KEY</kbd> Dismiss story &nbsp; <kbd>D-PAD</kbd> Mobile</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ GAME ═══════════ -->
+  <div id="screen-game" class="screen">
+
+    <!-- Stat bar -->
+    <div id="statbar">
+      <div class="stat-group">
+        <span class="stat-lbl">HP</span>
+        <span class="stat-val hp-val" id="stat-hp">24</span>
+        <span class="stat-sep">/</span>
+        <span class="stat-val" id="stat-maxhp">24</span>
+        <div class="bar-stack">
+          <div class="hp-bar-wrap"><div id="hp-bar" class="hp-bar"></div></div>
+          <div class="xp-bar-wrap"><div id="xp-bar" class="xp-bar"></div></div>
+        </div>
+      </div>
+      <div class="stat-group center-group">
+        <span class="stat-lbl">FLOOR</span>
+        <span class="stat-val floor-val" id="stat-floor">1</span>
+        <span id="stat-status" class="stat-status"></span>
+      </div>
+      <div class="stat-group right-group">
+        <span class="stat-icon atk-icon">⚔</span><span class="stat-val" id="stat-atk">4</span>
+        <span class="stat-icon def-icon">🛡</span><span class="stat-val" id="stat-def">1</span>
+        <span class="stat-icon gold-icon">⬡</span><span class="stat-val gold-val" id="stat-gold">0</span>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Message log -->
+    <div id="msglog"></div>
+
+    <!-- Level-up overlay -->
+    <div id="levelup-ui" style="display:none"></div>
+
+    <!-- Mobile D-pad -->
+    <div id="dpad">
+      <div class="dpad-row">
+        <button class="dpad-btn" data-dir="nw">◤</button>
+        <button class="dpad-btn dpad-main" data-dir="n">▲</button>
+        <button class="dpad-btn" data-dir="ne">◥</button>
+      </div>
+      <div class="dpad-row">
+        <button class="dpad-btn dpad-main" data-dir="w">◀</button>
+        <button class="dpad-btn dpad-wait" data-dir="wait">·</button>
+        <button class="dpad-btn dpad-main" data-dir="e">▶</button>
+      </div>
+      <div class="dpad-row">
+        <button class="dpad-btn" data-dir="sw">◣</button>
+        <button class="dpad-btn dpad-main" data-dir="s">▼</button>
+        <button class="dpad-btn" data-dir="se">◢</button>
+      </div>
+    </div>
+
+    <!-- Battle action buttons -->
+    <div id="battle-ui" style="display:none"></div>
+
+    <!-- Shop UI -->
+    <div id="shop-ui" style="display:none"></div>
+
+  </div>
+
+  <!-- ═══════════ DEAD ═══════════ -->
+  <div id="screen-dead" class="screen">
+    <div class="dead-inner">
+      <div class="dead-skull">†</div>
+      <h2 class="dead-title">YOU DIED</h2>
+      <div class="dead-msg" id="dead-msg"></div>
+      <div class="dead-stats" id="dead-stats"></div>
+      <div id="dead-hs" class="dead-hs"></div>
+      <button class="crt-btn" id="btn-retry">↺ TRY AGAIN</button>
+      <button class="crt-btn ghost-btn" id="btn-dead-menu">MENU</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
